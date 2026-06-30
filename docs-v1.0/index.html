@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>AI Social Replier SaaS - Launch a new AI Business Fast!</title>
+    <!-- Framework CSS -->
+    <link
+      rel="stylesheet"
+      href="assets/blueprint-css/screen.css"
+      type="text/css"
+      media="screen, projection"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/blueprint-css/print.css"
+      type="text/css"
+      media="print"
+    />
+    <!--[if lt IE 8
+      ]><link
+        rel="stylesheet"
+        href="assets/blueprint-css/ie.css"
+        type="text/css"
+        media="screen, projection"
+    /><![endif]-->
+    <link
+      rel="stylesheet"
+      href="assets/blueprint-css/plugins/fancy-type/screen.css"
+      type="text/css"
+      media="screen, projection"
+    />
+    <style type="text/css" media="screen">
+      p,
+      table,
+      hr,
+      .box {
+        margin-bottom: 25px;
+      }
+      .box p {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h3 class="center alt">
+        &ldquo;AI Social Replier SaaS Name&rdquo; Documentation by &ldquo;M.M.I.
+        Khan&rdquo; v1.0
+      </h3>
+
+      <hr />
+
+      <h1 class="center">&ldquo;AI Social Replier SaaS&rdquo;</h1>
+
+      <div class="borderTop">
+        <div class="span-6 colborder info prepend-1">
+          <p class="prepend-top">
+            <strong>
+              Created: 27/11/2024<br />
+              By: M.M.I. Khan<br />
+              Email:
+              <a href="mailto:mazedulislamkhan@gmail.com"
+                >mazedulislamkhan@gmail.com</a
+              >
+            </strong>
+          </p>
+        </div>
+        <!-- end div .span-6 -->
+
+        <div class="span-12 last">
+          <p class="prepend-top append-0">
+            Thank you for purchasing my app. If you have any questions that are
+            beyond the scope of this help file, please feel free to email via my
+            user page contact form
+            <a href="http://themeforest.net/user/mmikhan">here</a>. Thanks so
+            much!
+          </p>
+        </div>
+      </div>
+      <!-- end div .borderTop -->
+
+      <hr />
+
+      <h2 id="toc" class="alt">Table of Contents</h2>
+      <ol class="alpha">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#using-replier">Using Replier</a></li>
+        <li><a href="#chrome-extension">Chrome Extension</a></li>
+        <li><a href="#support">Support</a></li>
+      </ol>
+
+      <hr />
+
+      <h3 id="introduction">
+        <strong>A) Introduction</strong> - <a href="#toc">top</a>
+      </h3>
+      <p>
+        Welcome to AI Social Replier SaaS or Replier in short, an AI-powered
+        social media management tool designed to automate responses to your
+        social media interactions. This documentation will guide you through the
+        installation, setup, and usage of Replier, ensuring you can make the
+        most of its features.
+      </p>
+
+      <hr />
+
+      <h3 id="getting-started">
+        <strong>B) Getting Started</strong> - <a href="#toc">top</a>
+      </h3>
+
+      <p>
+        Replier is a lightweight application that can be run on a free Vercel
+        account. It requires no database since we are using Stripe dashboard and
+        APIs to their full potential. Vercel is indeed a requirement for
+        deploying this application.
+      </p>
+
+      <hr />
+
+      <h3 id="requirements">
+        <strong>C) Requirements</strong> - <a href="#toc">top</a>
+      </h3>
+
+      <p>Before you begin, ensure you have the following:</p>
+
+      <ol>
+        <li>
+          <a
+            href="https://support.google.com/cloud/answer/6158849?hl=en"
+            target="_blank"
+            >Google OAuth API</a
+          >: For Google authentication.
+        </li>
+        <li>
+          <a
+            href="https://support.stripe.com/questions/what-are-stripe-api-keys-and-how-to-find-them"
+            target="_blank"
+            >Stripe API Key</a
+          >: For payment processing.
+        </li>
+        <li>
+          <a href="https://platform.openai.com/api-keys" target="_blank"
+            >OpenAI API Key</a
+          >: For generating AI responses.
+        </li>
+        <li>
+          <a href="https://resend.com/" target="_blank">Resend API Key</a>: For
+          sending emails from the contact form.
+        </li>
+      </ol>
+
+      <hr />
+
+      <h3 id="installation">
+        <strong>D) Installation</strong> - <a href="#toc">top</a>
+      </h3>
+
+      <h4 id="local-setup"><strong>Local Setup</strong></h4>
+      <ol>
+        <li>
+          Extract the downloaded Zip file from CodeCanyon and navigate to the
+          project directory:
+          <pre lang="sh">cd replier</pre>
+        </li>
+        <li>
+          Install Dependencies:
+
+          <p>
+            We use PNPM and recommend using it, but npm can be used as well.
+          </p>
+          <pre lang="sh">pnpm install</pre>
+        </li>
+        <li>
+          Set Up Environment Variables:
+
+          <p>
+            Create a <code>.env.local</code> file in the root directory and add
+            the following environment variables:
+          </p>
+          <pre lang="sh">
+ADMIN_NAME=your_name
+ADMIN_EMAIL=your_email_address
+AUTH_SECRET=your_nextauth_secret
+AUTH_GOOGLE_ID=your_google_client_id
+AUTH_GOOGLE_SECRET=your_google_client_secret
+STRIPE_SECRET_KEY=your_stripe_secret_key
+BASE_URL=https://localhost:3000
+OPENAI_API_KEY=your_openai_api_key
+RESEND_API_KEY=your_resend_api_key
+RESEND_FROM_NAME=your_resend_from_name
+RESEND_FROM_EMAIL=your_resend_from_email
+RESEND_TO_NAME=your_resend_to_name
+RESEND_TO_EMAIL=your_resend_to_email
+					</pre
+          >
+        </li>
+        <li>
+          Stripe Integration:
+          <p>
+            Replier is tightly integrated with Stripe for subscription
+            management and billing. Follow these steps to configure Stripe in a
+            Sandbox environment:
+          </p>
+          <ul>
+            <li>
+              Create Stripe Products and Prices:
+
+              <p>
+                Run the seed script to create the necessary products and prices
+                in Stripe:
+              </p>
+              <pre lang="sh">pnpm seed --dev</pre>
+            </li>
+          </ul>
+        </li>
+        <li>
+          Run the Development Server:
+          <pre lang="sh">pnpm dev --experimental-https</pre>
+        </li>
+        <li>
+          Open the Application:
+
+          <p>
+            Open
+            <a href="https://localhost:3000" target="_blank"
+              >https://localhost:3000</a
+            >
+            with your browser to see the result.
+          </p>
+        </li>
+      </ol>
+
+      <h4 id="production-deployment"><strong>Production Deployment</strong></h4>
+
+      <p>
+        For production deployment on Vercel, follow the standard Next.js
+        deployment documentation:
+        <a
+          href="https://nextjs.org/learn-pages-router/basics/deploying-nextjs-app"
+          target="_blank"
+        >
+          Deplying Your Next.js App to Vercel
+        </a>
+      </p>
+
+      <p>
+        Before deploying to production, run the seed script for production from
+        your local environment. This will prepare the Stripe configuration in a
+        production setup for you without needing to manually set up all the
+        Stripe products in the production environment. It is important that you
+        do this while you're at your local setup as you can't run it from the
+        Vercel production server:
+      </p>
+
+      <pre lang="sh">pnpm seed</pre>
+
+      <p>
+        After the app is in production and the seed command has been run, the
+        administrator will need to create a 100% discount coupon from Stripe
+        production and use that coupon to make a purchase on the unlimited
+        subscription package directly from the app. This is required as we will
+        use the relevant subscription ID as a license key for all the free trial
+        users who have no license key. We are offering 5 free trial AI
+        generations from the Chrome extension for users who install it for the
+        first time. Copy the relevant subscription ID somewhere as we will use
+        it in the next section of the Chrome extension installation guide.
+      </p>
+
+      <hr />
+
+      <h3 id="using-replier">
+        <strong>E) Using Replier</strong> - <a href="#toc">top</a>
+      </h3>
+
+      <h4><strong>Dashboard</strong></h4>
+
+      <p>
+        Access the dashboard at <code>/dashboard</code> to manage your
+        subscription, view usage statistics, and update your billing
+        information.
+      </p>
+
+      <h4><strong>Subscription Management</strong></h4>
+
+      <p>
+        Manage your subscription through the billing portal. Navigate to the
+        billing portal from the dashboard to update your plan or billing
+        information.
+      </p>
+
+      <h4><strong>AI-Powered Replies</strong></h4>
+
+      <p>
+        Replier uses AI to generate contextually relevant responses to social
+        media interactions. Simply use the extension in your social media
+        accounts and let Replier handle the rest.
+      </p>
+
+      <hr />
+
+      <h3 id="chrome-extension">
+        <strong>E) Chrome Extension</strong> - <a href="#toc">top</a>
+      </h3>
+
+      <p>
+        Replier includes a Chrome extension to enhance your social media
+        management experience. Follow these steps to install and use the
+        extension:
+      </p>
+
+      <ol>
+        <li>
+          Extract the Chrome Extension:
+
+          <p>
+            The Chrome extension is provided as a zip file that you will get
+            when you extract the downloaded zip file from CodeCanyon.
+          </p>
+        </li>
+        <li>
+          Set Up Environment Variables:
+
+          <p>
+            The extension needs to connect with the Next.js app. Fill up the
+            following environment variables in the extension's
+            <code>.env</code> file:
+          </p>
+
+          <pre lang="sh">
+VITE_WXT_MAX_REQUEST=5
+VITE_WXT_SITE_URL='https://replier.social'
+VITE_WXT_ADMIN_LICENSE='your_license_key_from_your_site_dashboard'
+					</pre
+          >
+
+          <ul>
+            <li>
+              <code>VITE_WXT_MAX_REQUEST</code>: The number of free AI
+              generations allowed for free users.
+            </li>
+            <li>
+              <code>VITE_WXT_SITE_URL</code>: The site URL where you've deployed
+              the Next.js app on Vercel recently.
+            </li>
+            <li>
+              <code>VITE_WXT_ADMIN_LICENSE</code>: The admin license key that
+              you purchased using the 100% coupon. Logging into the Replier site
+              dashboard will grant you the license that needs to be used here.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Build the Extension:
+
+          <p>Run the following command to build the extension:</p>
+          <pre lang="sh">pnpm dev</pre>
+        </li>
+        <li>
+          Prepare the Extension Zip File:
+
+          <p>
+            Run the following command to prepare a zip file for the extension:
+          </p>
+          <pre lang="sh">pnpm zip</pre>
+        </li>
+        <li>
+          Install the Extension:
+
+          <p>
+            Load the unpacked extension in Chrome by navigating to
+            <code>chrome://extensions/</code>, enabling "Developer mode", and
+            selecting "Load unpacked". Choose the directory where the extension
+            was built.
+          </p>
+        </li>
+        <li>
+          Customize the Extension:
+          <p>
+            The extension was built using the
+            <a href="https://wxt.dev" target="_blank">WXT framework</a>, which
+            offers an extensive development guide for further customization. You
+            can customize the app name and description in the
+            <code>wxt.config.ts</code> file.
+          </p>
+        </li>
+        <li>
+          Publishing on Chrome Web Store:
+          <p>
+            Replier extension has already approved on the demo site for
+            <a href="https://replier.social" target="_blank"
+              >https://replier.social</a
+            >
+            at
+            <a
+              href="https://chromewebstore.google.com/detail/ai-social-replier-gpt-res/ahfilmopkkfaehndncopogaohdkddjjd"
+              target="_blank"
+            >
+              Chrome Web Store </a
+            >. This means you're full proof to customize the extension based on
+            your desired needs and release it on the Chrome Web Store under your
+            own brands name.
+          </p>
+        </li>
+      </ol>
+
+      <hr />
+
+      <h3 id="support"><strong>E) Support</strong> - <a href="#toc">top</a></h3>
+
+      <p>
+        If you have any questions or need assistance, please contact our support
+        team at
+        <a href="mailto:mazedulislamkhan@gmail.com"
+          >mazedulislamkhan@gmail.com</a
+        >. We'd be happy to assist you or set it up for you for a certain
+        installation fee.
+      </p>
+
+      <hr />
+
+      <p>
+        Thank you for choosing Replier! We hope you enjoy using our AI-powered
+        social media management tool.
+      </p>
+
+      <p class="append-bottom alt large"><strong>M.M.I. Khan</strong></p>
+      <p><a href="#toc">Go To Table of Contents</a></p>
+
+      <hr class="space" />
+    </div>
+  </body>
+</html>
